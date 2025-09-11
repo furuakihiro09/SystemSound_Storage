@@ -2,18 +2,30 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
-  <title>音声テスト</title>
+  <title>音声一覧テスト</title>
 </head>
 <body>
-  <h1>音声再生テスト</h1>
-  <button onclick="playSound()">音を鳴らす</button>
+  <h1>音声一覧</h1>
+  <div id="audioList"></div>
 
   <script>
-    function playSound() {
-      const audio = new Audio('se_bi-iin.mp3'); // 同じリポジトリにあるファイルを参照
-      audio.play();
-    }
+    // index.html と同じ階層にある音声ファイルのリスト
+    const audioFiles = [
+      'se_bi-iin.mp3'
+    ];
+
+    const container = document.getElementById('audioList');
+
+    audioFiles.forEach(file => {
+      const btn = document.createElement('button');
+      btn.textContent = file;
+      btn.addEventListener('click', () => {
+        const audio = new Audio(file);
+        audio.play();
+      });
+      container.appendChild(btn);
+      container.appendChild(document.createElement('br'));
+    });
   </script>
 </body>
 </html>
-
