@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>音声テスト</title>
+</head>
+<body>
+  <h1>音声再生テスト</h1>
+  <button onclick="playSound()">音を鳴らす</button>
+
+  <script>
+    function playSound() {
+      const audio = new Audio('sound.mp3'); // 同じリポジトリにあるファイルを参照
+      audio.play();
+    }
+  </script>
+</body>
+</html>
